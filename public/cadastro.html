@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+ 
+    <div class="img-cadastro">
+    <div class="container">
+        <div id="etapa1" class="formulario-etapa">
+            <h2>Cadastro</h2>
+            <label>Nome de usuário *</label>
+            <input type="text" placeholder="Digite seu nome de usuário">
+            <label>Endereço de e-mail *</label>
+            <input type="email" placeholder="Digite o seu e-mail">
+            <label>Crie sua senha *</label>
+            <input type="password" placeholder="Digite a senha que deseja criar">
+            <label>Confirme sua senha *</label>
+            <input type="password" placeholder="Digite sua senha novamente">
+            <div class="grupo-botoes">
+                <button onclick="window.location.href='index.html'">Voltar</button>
+                <button onclick="proximaEtapa()">Próximo</button>
+            </div>
+        </div>
+        
+        
+        <div id="etapa2" class="formulario-etapa" style="display: none;">
+            <h2>Cadastro</h2>
+            <label>Nome de exibição *</label>
+            <input type="text" placeholder="Digite o nome a ser apresentado">
+            <label>Selecione sua foto de perfil</label>
+            <input type="file" accept="image/png, image/jpeg">
+            <div class="grupo-botoes">
+                <button onclick="etapaAnterior()">Voltar</button>
+                <button>Cadastrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function proximaEtapa() {
+            document.getElementById('etapa1').style.display = 'none';
+            document.getElementById('etapa2').style.display = 'block';
+        }
+        function etapaAnterior() {
+            document.getElementById('etapa1').style.display = 'block';
+            document.getElementById('etapa2').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
